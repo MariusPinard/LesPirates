@@ -16,6 +16,14 @@ public class Carte {
 		this.description=description;
 	}
 	
+	public String getNom() {
+		return this.nom;
+	}
+	
+	public String getType() {
+		return this.type ;
+	}
+	
 	public String getDescription() {
 		return this.description;
 	}
