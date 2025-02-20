@@ -13,6 +13,7 @@ public class Pirate {
 	protected int numeroJoueur;
 	protected int pv;
 	protected int popularite;
+	protected Pirate adversaire;
 	protected Carte [] main;
 	
 	public Pirate (int numeroJoueur, int pv, int popularite) {
@@ -31,11 +32,10 @@ public class Pirate {
 	}
 	
 	public void jouerCarte (Carte carte) {
-		affichage.afficherCarte(this, carte);
 		if (carte.getType()=="popularite") {
 			this.jouerCartePopularite(carte);
 		} else if (carte.getType() == "attaque") {
-			this.jouerCarteAttaque(Carte carte, jo)
+			this.jouerCarteAttaque(carte, this.adversaire);
 		}
 	}
 	
@@ -43,26 +43,19 @@ public class Pirate {
 		this.augmenterPopularite(carte.getPopularite());
 		this.diminuerPV(carte.getPV());
 	}
-		
 	
+	public void jouerCarteAttaque(Carte carte, Pirate pirate) {
+		
+	}
+		
 	public int getNumeroJoueur () {
 		return this.numeroJoueur;
 	}
 	
-	public void piocher() {
-		
-		Random random=null;
-		try {
-			random = SecureRandom.getInstanceStrong();
-			} catch (Exception e) {
-			e.printStackTrace();
-			}
-		int r=random.nextInt(40);
-		
-		for (int i=0 ; i < 5 ; i++) {
-			if (this.main[i]==null) {		
-				this.main[i]=listeCartes[r];
-			}
-		}
+	
+	
+	public Carte [] getMain () {
+		return this.main;
 	}
+	
 }
