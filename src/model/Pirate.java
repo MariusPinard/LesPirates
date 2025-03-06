@@ -1,11 +1,10 @@
-package joueur;
+package model;
 
-import carte.Carte;
-import joueur.Jeu;
+import model.Jeu;
+import view.Affichage;
+
 import java.security.SecureRandom;
 import java.util.Random;
-
-import affichage.Affichage;
 
 
 public class Pirate {
@@ -45,17 +44,15 @@ public class Pirate {
 	}
 	
 	public void jouerCarteAttaque(Carte carte, Pirate pirate) {
-		
+		this.augmenterPopularite(carte.getPopularite());
+		pirate.diminuerPV(carte.getPV());
 	}
 		
 	public int getNumeroJoueur () {
 		return this.numeroJoueur;
 	}
 	
-	
-	
 	public Carte [] getMain () {
 		return this.main;
 	}
-	
 }

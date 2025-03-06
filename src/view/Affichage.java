@@ -1,4 +1,4 @@
-package affichage;
+package view;
 
 import java.util.ArrayList;
 import java.util.Collections;

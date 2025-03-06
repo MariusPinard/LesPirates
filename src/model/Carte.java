@@ -1,4 +1,4 @@
-package carte;
+package model;
 
 public class Carte {
 	
