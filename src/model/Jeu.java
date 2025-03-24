@@ -1,6 +1,7 @@
 package model;
 
 import java.security.SecureRandom;
+
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -58,6 +59,7 @@ public class Jeu {
 		pioche[10] = new CarteAttaque("Coup de Kuka", 2, "KUKA ! Le pirate adversaire perd 2 points de vie.");
 		pioche[11] = new CartePopularite("Repère outil", 2, 0, " Le pirate repère son adversaire sans se faire repérer, il gagne 2 points de popularité");
 		pioche[12] = new CartePopularite("Eclipse", 3, 0, "Après une brillante utilisation d'Eclipse, le pirate gagne 3 points de popularité");
+		pioche[13] = new CarteEchange("Echange furtif", "Vous échangez l'une de vos cartes contre une de votre adversaire, prise au hasard");
 	
 		this.pioche=pioche;
 		
@@ -126,12 +128,13 @@ public class Jeu {
 	
 	public void jouerCarte(Pirate joueurActuel, int index, Carte carteJouee) {
 		Carte playedCard = joueurActuel.supprimerCarteMain(index);
-		carteJouee.appliquerEffet(joueurActuel, joueurActuel.getAdversaire());
 		if (playedCard.getType() == TypeCarte.POPULARITE) {
+			carteJouee.appliquerEffet(joueurActuel, joueurActuel.getAdversaire());
 			joueurActuel.ajouterZonePopularite(playedCard);
 			zoneAttaque = null;
 
 		} else if (carteJouee.getType() == TypeCarte.ATTAQUE) {
+			carteJouee.appliquerEffet(joueurActuel, joueurActuel.getAdversaire());
 			zoneAttaque = carteJouee;
 		}
 	}

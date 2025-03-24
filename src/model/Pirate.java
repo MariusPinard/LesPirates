@@ -81,4 +81,17 @@ public class Pirate {
 		main[index]=null;
 		return carteSupprimee;
 	}
+	
+	public Carte ajouterCarteMain(Carte carte) {
+		int index=10;
+		for (int i=0 ; i < 5 ; i++) {
+			if (main[i]==null) {
+				index=i;
+			}
+		}
+		if (index!=10) {
+			main[index]=carte;
+		}
+		return carte;
+	}
 }

@@ -18,4 +18,8 @@ public class CarteAttaque extends Carte {
 	public void appliquerEffet(Pirate joueurActuel,Pirate adversaire) {
 		adversaire.diminuerPV(degats);
 	}
+	
+	public void appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int choisirCarte) {
+		
+	}
 }

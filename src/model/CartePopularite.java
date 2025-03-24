@@ -24,4 +24,9 @@ public class CartePopularite extends Carte {
 		joueurActuel.diminuerPV(coutVie);
 		joueurActuel.augmenterPopularite(pointsPopularite);
 		}
+	
+	public void appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int choisirCarte) {
+		
+	}
+
 }
