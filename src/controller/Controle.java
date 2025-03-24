@@ -44,13 +44,13 @@ public class Controle {
 			affichage.afficherCarteJouee(carteTableau(carteJouee),joueurActuel.getNom());
 			jeu.jouerCarte(joueurActuel, choixCarte, carteJouee);
 			
-			if (carteJouee.getNom()=="Echange furtif") {
+			if ("Echange furtif".equals(carteJouee.getNom())) {
 				int indexCarteChoisie=choisirCarte(joueurActuel);
 				Carte carteChoisie=joueurActuel.getMain()[indexCarteChoisie];
 				affichage.afficherResultatEchange(carteChoisie.getNom(),
 						carteJouee.appliquerEffetEchange(joueurActuel, joueurActuel.getAdversaire(), indexCarteChoisie).getNom());
 				
-			} else if (carteJouee.getNom()=="Coup de Yaskawa") {
+			} else if ("Coup de Yaskawa".equals(carteJouee.getNom())) {
 				carteJouee.appliquerEffetPuissance(joueurActuel, joueurActuel.getAdversaire());
 				affichage.afficherResultatPuissance(joueurActuel.getPopularite());
 			}
