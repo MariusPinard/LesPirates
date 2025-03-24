@@ -19,6 +19,7 @@ public class Jeu {
 	protected int indexPioche=0;
 	
 	protected Carte [] pioche;
+	protected int taillePioche=14;
 	protected boolean fin;
 	protected Pirate joueurActuel;
 	protected Pirate adversaire;
@@ -42,7 +43,7 @@ public class Jeu {
 		this.joueurActuel=pirate1;
 		
 		
-		pioche = new Carte[13];
+		pioche = new Carte[taillePioche];
 
 		pioche[0] = new CarteAttaque("Attaque", 1, "Attaque du bateau ennemi, l'adversaire perd un point de vie.");
 		pioche[1] = new CarteAttaque("Mutinerie", 1, "Une révolte éclate à bord du bateau ennemi, l'adversaire perd un point de vie.");
@@ -89,14 +90,15 @@ public class Jeu {
 				
 				if (pirate.main[i]==null) {		
 					
-					int randomCarte = random.nextInt(0,12);
+					int randomCarte = random.nextInt(taillePioche);
 					Carte cartePiochee=pioche[randomCarte];
 					
 					while (cartePiochee==null) {
-						randomCarte = random.nextInt(0,12);
+						randomCarte = random.nextInt(taillePioche);
 						cartePiochee=pioche[randomCarte];
 					}
 					pirate.main[i]=cartePiochee;
+					pirate.tailleMain++;
 					pioche[randomCarte]=null;
 					indexPioche+=1;
 				}
@@ -109,14 +111,18 @@ public class Jeu {
 			System.out.println("Pioche vide !");
 		} else {
 			for (int i=0 ; i < 5 ; i++) {
-				if (pirate.getMain()[i]==null) {	
-					int randomCarte = random.nextInt(0,12);
+				
+				if (pirate.getMain()[i]==null) {
+					
+					int randomCarte = random.nextInt(taillePioche);
 					Carte cartePiochee=pioche[randomCarte];
+					
 					while (cartePiochee==null) {
-						randomCarte = random.nextInt(0,12);
+						randomCarte = random.nextInt(taillePioche);
 						cartePiochee=pioche[randomCarte];
 					}
 					pirate.main[i]=cartePiochee;
+					pirate.tailleMain++;
 					pioche[randomCarte]=null;
 					indexPioche+=1;
 					return cartePiochee;

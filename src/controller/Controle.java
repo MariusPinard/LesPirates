@@ -44,7 +44,10 @@ public class Controle {
 			affichage.afficherCarteJouee(carteTableau(carteJouee),joueurActuel.getNom());
 			jeu.jouerCarte(joueurActuel, choixCarte, carteJouee);
 			if (carteJouee.getType()==TypeCarte.SPECIALE) {
-				carteJouee.appliquerEffetSpecial(joueurActuel, joueurActuel.getAdversaire(), choisirCarte(joueurActuel));
+				int indexCarteChoisie=choisirCarte(joueurActuel);
+				Carte carteChoisie=joueurActuel.getMain()[indexCarteChoisie];
+				affichage.afficherResultatEchange(carteChoisie.getNom(),
+						carteJouee.appliquerEffetSpecial(joueurActuel, joueurActuel.getAdversaire(), indexCarteChoisie).getNom());
 			}
 			
 			affichage.afficherEtatJeu(creerEtatPirate(jeu.getJoueur1()), creerEtatPirate(jeu.getJoueur2()),

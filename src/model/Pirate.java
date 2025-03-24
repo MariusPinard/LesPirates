@@ -91,6 +91,7 @@ public class Pirate {
 		}
 		if (index!=10) {
 			main[index]=carte;
+			tailleMain++;
 		}
 		return carte;
 	}

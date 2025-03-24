@@ -107,6 +107,10 @@ public class Affichage	implements IAffichage {
 	public void afficherErreurChoix() {
 		System.out.println("Choix invalide, rééssayez s'il vous plait.");
 	}
+	
+	public void afficherResultatEchange(String carteDonnee, String carteRecue) {
+		System.out.println("Vous avez donné la carte " + carteDonnee + " et reçu la carte " + carteRecue);
+	}
 
 	@Override
 	public void afficherVainqueur(String vainqueur) {

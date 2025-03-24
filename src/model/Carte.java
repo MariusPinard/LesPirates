@@ -29,6 +29,6 @@ public abstract class Carte {
 	
 	public abstract void appliquerEffet(Pirate joueurActuel, Pirate adversaire);
 
-	public abstract void appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int choisirCarte);
+	public abstract Carte appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int choisirCarte);
 	
 }

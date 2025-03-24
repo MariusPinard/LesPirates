@@ -21,6 +21,8 @@ public interface IAffichage {
 	int getChoixCarte();
 
 	void afficherErreurChoix();
+	
+	void afficherResultatEchange(String carteDonnee, String carteRecue);
 
 	void afficherVainqueur(String name);
 }
