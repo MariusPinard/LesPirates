@@ -111,6 +111,10 @@ public class Affichage	implements IAffichage {
 	public void afficherResultatEchange(String carteDonnee, String carteRecue) {
 		System.out.println("Vous avez donné la carte " + carteDonnee + " et reçu la carte " + carteRecue);
 	}
+	
+	public void afficherResultatPuissance(int pointsPopularite) {
+		System.out.println("Vous avez " + pointsPopularite + " points de popularité donc vous enlevez " + pointsPopularite + " points de vie à votre adversaire.");
+	}
 
 	@Override
 	public void afficherVainqueur(String vainqueur) {

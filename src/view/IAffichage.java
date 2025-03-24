@@ -23,6 +23,8 @@ public interface IAffichage {
 	void afficherErreurChoix();
 	
 	void afficherResultatEchange(String carteDonnee, String carteRecue);
+	
+	void afficherResultatPuissance(int pointsPopularite);
 
 	void afficherVainqueur(String name);
 }

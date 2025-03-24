@@ -19,7 +19,11 @@ public class CarteAttaque extends Carte {
 		adversaire.diminuerPV(degats);
 	}
 	
-	public Carte appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int choisirCarte) {
+	public Carte appliquerEffetEchange(Pirate joueurActuel, Pirate adversaire, int choisirCarte) {
 		return null;
+	}
+	
+	public void appliquerEffetPuissance(Pirate joueurActuel, Pirate adversaire) {
+		
 	}
 }

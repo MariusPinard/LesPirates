@@ -18,7 +18,7 @@ public class CarteEchange extends Carte {
 	
 	
 	
-	public Carte appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int indexCarte) {
+	public Carte appliquerEffetEchange(Pirate joueurActuel, Pirate adversaire, int indexCarte) {
 		Carte carteChoisie = joueurActuel.supprimerCarteMain(indexCarte);
 		int indexCarteAdversaire = random.nextInt(adversaire.getTailleMain());
 		while (adversaire.getMain()[indexCarteAdversaire] == null) {
@@ -33,6 +33,10 @@ public class CarteEchange extends Carte {
 	
 	@Override
 	public void appliquerEffet(Pirate joueurActuel, Pirate adversaire) {
+		
+	}
+	
+	public void appliquerEffetPuissance(Pirate joueurActuel, Pirate adversaire) {
 		
 	}
 }

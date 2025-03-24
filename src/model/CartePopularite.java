@@ -25,8 +25,12 @@ public class CartePopularite extends Carte {
 		joueurActuel.augmenterPopularite(pointsPopularite);
 		}
 	
-	public Carte appliquerEffetSpecial(Pirate joueurActuel, Pirate adversaire, int choisirCarte) {
+	public Carte appliquerEffetEchange(Pirate joueurActuel, Pirate adversaire, int choisirCarte) {
 		return null;
+	}
+	
+	public void appliquerEffetPuissance(Pirate joueurActuel, Pirate adversaire) {
+		
 	}
 
 }

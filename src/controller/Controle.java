@@ -43,11 +43,16 @@ public class Controle {
 			Carte carteJouee = joueurActuel.getMain()[choixCarte];
 			affichage.afficherCarteJouee(carteTableau(carteJouee),joueurActuel.getNom());
 			jeu.jouerCarte(joueurActuel, choixCarte, carteJouee);
-			if (carteJouee.getType()==TypeCarte.SPECIALE) {
+			
+			if (carteJouee.getNom()=="Echange furtif") {
 				int indexCarteChoisie=choisirCarte(joueurActuel);
 				Carte carteChoisie=joueurActuel.getMain()[indexCarteChoisie];
 				affichage.afficherResultatEchange(carteChoisie.getNom(),
-						carteJouee.appliquerEffetSpecial(joueurActuel, joueurActuel.getAdversaire(), indexCarteChoisie).getNom());
+						carteJouee.appliquerEffetEchange(joueurActuel, joueurActuel.getAdversaire(), indexCarteChoisie).getNom());
+				
+			} else if (carteJouee.getNom()=="Coup de Yaskawa") {
+				carteJouee.appliquerEffetPuissance(joueurActuel, joueurActuel.getAdversaire());
+				affichage.afficherResultatPuissance(joueurActuel.getPopularite());
 			}
 			
 			affichage.afficherEtatJeu(creerEtatPirate(jeu.getJoueur1()), creerEtatPirate(jeu.getJoueur2()),

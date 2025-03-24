@@ -15,11 +15,10 @@ public class Jeu {
 	protected Pirate pirate1;
 	protected Pirate pirate2;
 	private Random random;
-	protected int nbCartesPioche=40;
 	protected int indexPioche=0;
 	
 	protected Carte [] pioche;
-	protected int taillePioche=14;
+	protected int taillePioche=15;
 	protected boolean fin;
 	protected Pirate joueurActuel;
 	protected Pirate adversaire;
@@ -61,6 +60,7 @@ public class Jeu {
 		pioche[11] = new CartePopularite("Repère outil", 2, 0, " Le pirate repère son adversaire sans se faire repérer, il gagne 2 points de popularité");
 		pioche[12] = new CartePopularite("Eclipse", 3, 0, "Après une brillante utilisation d'Eclipse, le pirate gagne 3 points de popularité");
 		pioche[13] = new CarteEchange("Echange furtif", "Vous échangez l'une de vos cartes contre une de votre adversaire, prise au hasard");
+		pioche[14] = new CartePuissance("Coup de Yaskawa", "Votre adversaire perd autant de points de vie que vous avez de points de popularité");
 	
 		this.pioche=pioche;
 		
@@ -174,7 +174,7 @@ public class Jeu {
 		} else if (pirate1.getVie()<=0) {
 			return pirate2.getNom() + " a gagné !";
 		} else {
-			return pirate1.getNom() + " a gagné";
+			return pirate1.getNom() + " a gagné !";
 		}
 	}
 }
